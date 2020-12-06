@@ -19,14 +19,15 @@ Building
 
 ::
 
-	# cd /path/to/this/repo
-	# podman build -t ftb-interactions-server-containerfile .
+	$ cd /path/to/this/repo
+	$ podman build -t ftb-interactions-server-containerfile .
 
 Running
 =======
 
 Firstly, create a user (if desired) to run the server
-and own the files. ::
+and own the files. Then, as the user, build the image as in
+the section **Building** above. ::
 
 	# useradd minecraft
 
@@ -40,7 +41,6 @@ SELinux type. ::
 Lastly, run the built image as a container, changing parameters
 as desired. ::
 
-	# podman run -d -it -v /home/minecraft/data:/minecraft:z \
-		-e MAX_RAM=8G -e UID=$(id -u minecraft) -e GID=$(id -g minecraft) \
-		-p 12345:25565 --name ftbserver -m=8G --cpus=4 \
+	$ podman run -d -it -v /home/minecraft/data:/minecraft:z \
+		-p 12345:25565 --name ftbserver \
 		localhost/ftb-interactions-server-containerfile
