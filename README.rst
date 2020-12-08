@@ -12,7 +12,7 @@ annoying workaround of creating the installation in the
 to the ``/minecraft`` volume upon start.
 
 Note that it also directly accepts the EULA in
-``eula.txt``without prompting.
+``eula.txt`` without prompting.
 
 Building
 ========
