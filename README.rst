@@ -37,6 +37,9 @@ SELinux type. ::
 	# mkdir -p /home/minecraft/data
 	# chown -R minecraft:minecraft /home/minecraft/data
 	# chcon -Rt svirt_sandbox_file_t /home/minecraft/data
+
+**Before proceeding further, copy in the desired files
+server.properties, whitelist.json, ops.json.**
 	
 Lastly, run the built image as a container, changing parameters
 as desired. ::
