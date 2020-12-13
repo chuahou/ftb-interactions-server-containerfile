@@ -44,3 +44,10 @@ as desired. ::
 	$ podman run -d -it -v /home/minecraft/data:/minecraft:z \
 		-p 12345:25565 --name ftbserver \
 		localhost/ftb-interactions-server-containerfile
+
+To run a vanilla server instead, do the above, then run the itzg
+image. ::
+
+	$ podman run -d -it -v /home/minecraft/data:/data:z  \
+		-p 12345:25565 --name mcserver -e EULA=true \
+		itzg/minecraft-server
